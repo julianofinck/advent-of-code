@@ -59,7 +59,7 @@ def main():
 
     # Part 2 - Similarity score
     similarity_score = calculate_similarity_score(left_list, right_list)
-    print(f"The distance is: {similarity_score}")
+    print(f"The similarity score is: {similarity_score}")
 
 
 if __name__ == "__main__":
