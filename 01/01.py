@@ -46,7 +46,7 @@ def calculate_similarity_score(list1: list, list2: list) -> int:
 
 def main():
     # Read input lists
-    input_lists = "01/input.csv"
+    input_lists = "01/input.txt"
     left_list, right_list = read_loc_lists(input_lists)
 
     # Sort lists
