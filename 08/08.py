@@ -1,8 +1,6 @@
 with open("08/input.txt", "r") as f:
     grid = {i + 1 + (j + 1) * 1j : v for j, l in enumerate(f.read().strip().split("\n")) for i, v in enumerate(l)}
 
-grid2 = {i + 1 + (j + 1) * 1j : v for j, l in enumerate(example.strip().split("\n")) for i, v in enumerate(l)}
-
 part2 = True
 antinodes = set()
 for antenna in [a for a in set(grid.values()) if a != "."]:
