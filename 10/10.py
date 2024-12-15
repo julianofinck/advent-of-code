@@ -1,43 +1,36 @@
 with open("10/input.txt", "r") as f:
-    grid = {i + 1 + (j + 1) * 1j : int(v) for j, l in enumerate(f.read().strip().split("\n")) for i, v in enumerate(l)}
+    topography = {i + 1 + (j + 1) * 1j : int(v) for j, l in enumerate(f.read().strip().split("\n")) for i, v in enumerate(l)}
 
 
-def up_to_9(pos):
+def find_peaks(pos):
     result = list()
     for p in pos:
-        if grid[p] == 9:
-            return p
+        if topography[p] == 9:
+            result.append(p)
         else:
             # Walk
             for i in range(4):
                 next_p = p + 1j ** i
-                if next_p in grid:
-                    if grid[next_p] - grid[p] == 1:
-                        r = up_to_9([next_p])
+                if next_p in topography:
+                    if topography[next_p] - topography[p] == 1:
+                        r = find_peaks([next_p])
                         if r:
-                            result.append(r)
+                            result.extend(r)
                     
-            return result
+        return result
 
-def flatten(results):
-    """Flatten nested lists into a single list."""
-    if not isinstance(results, list):
-        return [results]  # Base case: not a list, return as a list
-    flat_list = []
-    for item in results:
-        flat_list.extend(flatten(item))  # Recursively flatten each item
-    return flat_list
 
-trailheads_9_unique = list()
-trailheads_9 = list()
-for trailhead in [g for g, h in grid.items() if h == 0]:
-    r = flatten(up_to_9([trailhead]))
+trail_heads_unique = list()
+trail_heads = list()
+for trail_head in [g for g, h in topography.items() if h == 0]:
+    r = find_peaks([trail_head])
+
     # Part 1
-    trailheads_9_unique.append(set(r))
+    trail_heads_unique.append(set(r))
 
     # Part 2
-    trailheads_9.append(r)
+    trail_heads.append(r)
 
 
-print("Part 1: Trailhead Score:", sum([len(s) for s in trailheads_9_unique]))
-print("Part 2: Trailhead Rating:", sum([len(s) for s in trailheads_9]))
+print("Part 1: Trail head Score:", sum([len(s) for s in trail_heads_unique]))
+print("Part 2: Trail head Rating:", sum([len(s) for s in trail_heads]))
