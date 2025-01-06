@@ -1,0 +1,17 @@
+def print(region):
+    mr = min([k.real for k in region])
+    Mr = max([k.real for k in region])
+    mi = min([k.imag for k in region])
+    Mi = max([k.imag for k in region])
+    mapa = list()
+    for j in range(int(Mi - mi) + 1):
+        l = list()
+        for i in range(int(Mr - mr) + 1):
+            l += [" "]
+        mapa.append(l)
+    for k in region:
+        mapa[int(k.imag - mi)][int(k.real - mr)] = "*"
+    for l in mapa:
+        print("".join(l))
+    print(len(sides))
+    print("\n")

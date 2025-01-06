@@ -1,10 +1,12 @@
 """
-Ceres Search (for XMAS)
+ Day 4: Ceres Search 
+
+ Ceres Search (for XMAS)
 Ceres monitoring station
 """
 # Read
 numb_xmas = 0
-with open("04/word_search.txt", "r") as f:
+with open("04/input.txt", "r") as f:
     matrix = [l.replace("\n", "") for l in f.readlines()]
 
 # Part 1: find "XMAS" in every direction

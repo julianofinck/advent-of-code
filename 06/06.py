@@ -1,3 +1,6 @@
+"""
+ Day 6: Guard Gallivant 
+"""
 with open("06/input.txt", "r") as f:
     grid = {j + i * 1j: e for i, l in enumerate(f.read().strip().split("\n")) for j, e in enumerate(l)}
 

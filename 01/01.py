@@ -1,3 +1,6 @@
+"""
+ Day 1: Historian Hysteria 
+"""
 def read_loc_lists(file_name: str) -> tuple[list]:
     """
     The two Elves groups sent you the lists of the locations

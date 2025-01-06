@@ -1,11 +1,13 @@
 """
-North Pole Toboggan Rental Shop
+ Day 3: Mull It Over 
+
+ North Pole Toboggan Rental Shop
 """
 import re
 from functools import reduce
 
 # Read
-file = "03/corrupted_program.txt"
+file = "03/input.txt"
 with open(file, "r") as f:
     data = f.read()
 

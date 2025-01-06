@@ -1,3 +1,6 @@
+"""
+ Day 8: Resonant Collinearity 
+"""
 with open("08/input.txt", "r") as f:
     grid = {i + 1 + (j + 1) * 1j : v for j, l in enumerate(f.read().strip().split("\n")) for i, v in enumerate(l)}
 

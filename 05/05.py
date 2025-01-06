@@ -1,3 +1,6 @@
+"""
+ Day 5: Print Queue 
+"""
 with open("05/input.txt") as f:
     rules, sequences = f.read().strip().split("\n\n")
 

@@ -1,3 +1,6 @@
+"""
+ Day 10: Hoof It 
+"""
 with open("10/input.txt", "r") as f:
     topography = {i + 1 + (j + 1) * 1j : int(v) for j, l in enumerate(f.read().strip().split("\n")) for i, v in enumerate(l)}
 
